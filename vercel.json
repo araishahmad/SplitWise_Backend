@@ -1,20 +1,11 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "server.js",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "routes/**",
-                    "models/**",
-                    "config/**",
-                    "middleware/**",
-                    "*.js"
-                ]
-            }
+    "functions": {
+        "server.js": {
+            "runtime": "nodejs20.x",
+            "includeFiles": "routes/**|models/**|config/**|middleware/**|*.js"
         }
-    ],
+    },
     "routes": [
         {
             "src": "/(.*)",
